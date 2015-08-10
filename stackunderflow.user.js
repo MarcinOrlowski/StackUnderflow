@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    http://webnetmobile.com/
-// @version      0.1
+// @version      0.2
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @match        https://stackoverflow.com/questions/*
@@ -161,7 +161,7 @@ function updateDisplay() {
 
     
     // update links
-    $(".post-signature > .user-info").each(function(index){updateUserLinksRaw(index,$(this));});
+    $("td.post-signature > .user-info").each(function(index){updateUserLinksRaw(index,$(this));});
     
 }
 
@@ -169,16 +169,15 @@ function updateUserLinksRaw(index, element) {
     var userId = element.find(".user-details > a").attr("href");//.split("/")[2];
     if (userId !== undefined) {
         userId = userId.split("/")[2];
-        
         if (userId != myId ) {
             var isFav = isFavourite(userId);
             var isBl = isBlacklisted(userId);
             
-            var actionId = "wbn_action_user_" + userId;
+            var actionId = "wbn_action_user_" + userId + "_" + index;
             element.after('<div id="' + actionId + '"></div>');
 
             // blacklist
-            var blacklistId = "wbn_blacklist_" + userId;      
+            var blacklistId = "wbn_blacklist_" + userId + "_" + index;
             var blLabel = isBl ? "Click to remove this user from blacklist" : "Click to blacklist this user";
             var blIconUrl = isBl ? cfg_userBlacklistedOnUrl : cfg_userBlacklistedOffUrl;
             if ($("#" + blacklistId)[0]) {
@@ -199,7 +198,7 @@ function updateUserLinksRaw(index, element) {
             }
 
                         // favourite
-            var favId = "wbn_favourite_" + userId;
+            var favId = "wbn_favourite_" + userId + "_" + index;
             var favLabel = isFav ? "Click to remove from favourites" : "Click to mark user as your favourite";
             var favIconUrl = isFav ? cfg_userFavouriteOnUrl : cfg_userFavouriteOffUrl;
             if ($("#" + favId)[0]) {
@@ -218,7 +217,6 @@ function updateUserLinksRaw(index, element) {
             } else {
                 favContainer.css("visibility", "hidden");
             }
-
 
         }
     }
