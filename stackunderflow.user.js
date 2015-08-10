@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    http://webnetmobile.com/
-// @version      0.2
+// @version      0.1
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @match        https://stackoverflow.com/questions/*
@@ -23,7 +23,7 @@ var cfg_highlightAcceptedAnswer = true;
 
 // true/false: when true (default) you will seel warning if question you are reading is asked by user with reputation lower than cfg_questionPosterReputationThreshold value
 var cfg_enableLowReputationWarning = true;
-var cfg_questionPosterReputationThreshold = 500;
+var cfg_questionPosterReputationThreshold = 250;
 
 // true/false: when true (default) you will see warning when you are reading a question asked by user you already blacklisted
 var cfg_enablePostedByBlacklistedUserWarning = true;
@@ -124,7 +124,7 @@ function updateDisplay() {
     }
 
     if (!wbn_lowReputationWarningBannerSet) {
-        var posterReputationLow = '<div class="wbn_lowReputationBanner wbn_banner wbn_warningBanner wbn_hidden">Poster reputation is low</div>';
+        var posterReputationLow = '<div class="wbn_lowReputationBanner wbn_banner wbn_warningBanner wbn_hidden">Poster reputation score is below ' + cfg_questionPosterReputationThreshold + ' points</div>';
         $(posterReputationLow).insertBefore("#question-header");
         $(posterReputationLow).insertBefore("#post-editor"); 
         
