@@ -109,7 +109,7 @@ function updateDisplay() {
     }
 
     if (!wbn_postedByBlacklistedUserBannerSet) {
-        var blacklistedUserPostBanner = '<div class="wbn_postedByBlacklistedUserBanner wbn_banner wbn_blacklistedBanner wbn_hidden"><img class="wbn_userActionIconSmall" src="' + cfg_userBlacklistedOnUrl + '"> Question asked by blacklisted user</div>';
+        var blacklistedUserPostBanner = '<div class="wbn_postedByBlacklistedUserBanner wbn_banner wbn_blacklistedBanner wbn_hidden"><img class="wbn_userActionIcon" src="' + cfg_userBlacklistedOnUrl + '"> Question asked by blacklisted user</div>';
         $(blacklistedUserPostBanner).insertBefore("#question-header");
         $(blacklistedUserPostBanner).insertBefore("#post-editor"); 
 
@@ -117,7 +117,7 @@ function updateDisplay() {
     }
 
     if (!wbn_postedByFavouriteUserBannerSet) {
-        var favouriteUserPostBanner = '<div class="wbn_postedByFavouriteUserBanner wbn_banner wbn_favouriteBanner wbn_hidden"><img class="wbn_userActionIconSmall" src="' + cfg_userFavouriteOnUrl + '"> Question asked by favourited user</div>';
+        var favouriteUserPostBanner = '<div class="wbn_postedByFavouriteUserBanner wbn_banner wbn_favouriteBanner wbn_hidden"><img class="wbn_userActionIcon" src="' + cfg_userFavouriteOnUrl + '"> Question asked by starred user</div>';
         $(favouriteUserPostBanner).insertBefore("#question-header");
 
         wbn_postedByFavouriteUserBannerSet = true;
@@ -303,18 +303,10 @@ GM_addStyle ( multilineStr ( function () {/*!
     }
     
     .wbn_userActionIcon {
-        width: 24px;
-        height: 24px;
-        border: 0;
-        padding: 2px;
-        vertical-align: middle;
-    }
-
-    .wbn_userActionIconSmall {
         width: 18px;
         height: 18px;
         border: 0;
-        padding: 0px;
+        padding: 2px;
         vertical-align: middle;
     }
 
