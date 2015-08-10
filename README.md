@@ -42,6 +42,7 @@ Marcin Orlowski
 ### Changelog
  - v0.2 (2015-08-10)
   - Added action icons
+  - Fixed handling of users answering own question
   
  - v0.1 (2015-08-09)
   - Initial release
