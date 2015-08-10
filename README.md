@@ -1,13 +1,6 @@
 ### StackUnderflow
 
- StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with StackOverflow.com site. As for now:
-
-  - user blacklist
-    - warning on question asked by blacklisted user
-  - favorite users
-    - notice on question asked by favourite user
-  - warnings on low reputation user question
-  - and more...
+ StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with StackOverflow.com site.
 
  You should easily notice additiona icons appearing next to details of author of each question or answer:
 
