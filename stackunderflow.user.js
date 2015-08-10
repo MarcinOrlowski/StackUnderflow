@@ -4,6 +4,7 @@
 // @version      0.1
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
+// @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
 // @match        https://stackoverflow.com/questions/*
 // @require      https://code.jquery.com/jquery-latest.js
 // @grant        GM_addStyle
