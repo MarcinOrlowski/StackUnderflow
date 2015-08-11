@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    http://webnetmobile.com/
-// @version      0.1
+// @version      0.2
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
