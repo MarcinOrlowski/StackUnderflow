@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    http://webnetmobile.com/
-// @version      0.2
+// @version      0.3
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
 // @match        https://stackoverflow.com/questions/*
 // @require      https://code.jquery.com/jquery-latest.js
+// @require      https://raw.githubusercontent.com/rmm5t/jquery-timeago/master/jquery.timeago.js
 // @grant        GM_addStyle
 // @grant        GM_getValue
 // @grant        GM_setValue
@@ -29,8 +30,12 @@ var cfg_questionPosterReputationThreshold = 250;
 // true/false: when true (default) you will see warning when you are reading a question asked by user you already blacklisted
 var cfg_enablePostedByBlacklistedUserWarning = true;
 
-// true/false: when true (default) yo uwill see information when you are reading question asked by user you got on your favourite user list
+// true/false: when true (default) you will see information when you are reading question asked by user you got on your favourite user list
 var cfg_enablePostedByFavouriteUserWarning = true;
+
+// true/false: when true (defaut) you will see notice when question you are reading was asked more than cfg_oldQuestionDayThreshold days ago
+var cfg_enableOldQuestionWarning = true;
+var cfg_oldQuestionDayThreshold = 30;
 
 var cfg_userBlacklistedOnUrl = "https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-on.png";
 var cfg_userBlacklistedOffUrl = "https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-off.png";
@@ -44,6 +49,7 @@ var wbn_postedByBlacklistedUserBannerSet = false;
 var wbn_questionHasAcceptedAnswerBannerSet = false;
 var wbn_lowReputationWarningBannerSet = false;
 var wbn_postedByFavouriteUserBannerSet = false;
+var wbn_oldQuestionBannerSet = false
 
 var wbn_blacklistedEntryPrefix = "blacklisted_";
 var wbn_favouriteEntryPrefix = "favourite_";
@@ -55,6 +61,7 @@ var myId = $(".topbar-links > a").attr("href").split("/")[2];
 var posterRoot = $(".post-signature.owner");
 var posterName = posterRoot.find(".user-details > a").text();
 var posterId = posterRoot.find(".user-details > a").attr("href").split("/")[2];
+var postedDateMillis = Date.parse(posterRoot.find(".user-info > .user-action-time > .relativetime").attr("title"));
 
 var posterReputation = posterRoot.find(".reputation-score").attr("title").split(" ")[2];
 // poster reputation missing in title of for some questions (most likely SO bug):
@@ -93,9 +100,22 @@ function updateDisplay() {
 
     // update banners
     var hasAcceptedAnswer = $("#answers .answer.accepted-answer")[0];
-
+    
     // plant banners
-    if (!wbn_questionHasAcceptedAnswerBannerSet) {
+
+    if (!wbn_oldQuestionBannerSet) {
+        var daysOld = Math.round((new Date().getTime() - postedDateMillis) / 86400000);
+        if (daysOld > cfg_oldQuestionDayThreshold) {
+            var oldAnswerBanner = '<div id="wbn_oldAnswer" class="wbn_banner wbn_tooOldBanner">Question was asked ' + jQuery.timeago(postedDateMillis) + '</div>';
+            $(oldAnswerBanner).insertBefore("#question-header");
+            $(oldAnswerBanner).insertBefore("#post-editor"); 
+        }
+        
+        wbn_oldQuestionBannerSet = true;
+    }
+
+    
+    if (!wbn_questionHasAcceptedAnswerBannerSet) {        
         if (hasAcceptedAnswer) {
             var hasAnswerBanner = '<div id="wbn_questionHasAcceptedAnswer" class="wbn_banner wbn_okBanner">Question has accepted answer</div>';
             $(hasAnswerBanner).insertBefore("#question-header");
@@ -276,7 +296,12 @@ GM_addStyle ( multilineStr ( function () {/*!
         background: #CB5555;
         color: white;
     }
-    
+
+    .wbn_tooOldBanner {
+        background: #FFB028;
+        color: black;
+    }
+
     .wbn_favouriteBanner {
         background: #FFDD00;
         color: black;
