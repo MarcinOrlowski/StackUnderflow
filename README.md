@@ -7,7 +7,7 @@
 ![New icons](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_icons.png)
 
  1. indicates whenever user is on your blacklist ![blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-on.png) or not ![not blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-off.png)
- 2. indicates whenever you consider this user your favourite (starred) one. Tap this icon to toggle the state. ![blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png) or just regular one ![regular user](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png). Tap this icon to star/unstar this user.
+ 2. indicates whenever you consider this user your favourite (starred) one ![starred](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png) or just regular one ![regular user](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png). Tap this icon to toggle this flag.
 
 Note: when you blacklist starred user, s/he will be only considered blacklisted from now one, but star flag will not be be altered, which means once user is removed from blacklist, s/he become will be considered starred again. If you do not want this to take place, you must remove star manually.
 
