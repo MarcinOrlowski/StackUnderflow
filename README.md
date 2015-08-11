@@ -42,6 +42,9 @@ I created this script with my needs in mind, however I hope you find it useful t
 Marcin Orlowski
 
 ### Changelog
+ - v0.3 (2015-08-11)
+  - Added "question too old" warning feature (default threshold is 30 days)
+
  - v0.2 (2015-08-10)
   - Added action icons
   - Fixed handling of users answering own question
