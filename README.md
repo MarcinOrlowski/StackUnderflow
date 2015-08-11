@@ -1,8 +1,8 @@
 ### StackUnderflow
 
- StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with [StackOverflow.com site](https://StackOverflow.com).
+ StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with [StackOverflow.com](https://StackOverflow.com).
 
- You should easily notice additiona icons appearing next to details of author of each question or answer:
+ Once it runs, you should easily notice additional icons added to info box of author of each question or answer:
 
 ![New icons](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_icons.png)
 
