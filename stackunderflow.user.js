@@ -25,6 +25,8 @@ var cfg_highlightAcceptedAnswer = true;
 
 // true/false: when true (default) you will seel warning if question you are reading is asked by user with reputation lower than cfg_questionPosterReputationThreshold value
 var cfg_enableLowReputationWarning = true;
+// do you want this warning above the question (true), or just above response form (false, default)
+var cfg_enableLowReputationWarningAboveQuestion = false;
 var cfg_questionPosterReputationThreshold = 250;
 
 // true/false: when true (default) you will see warning when you are reading a question asked by user you already blacklisted
@@ -146,7 +148,9 @@ function updateDisplay() {
 
     if (!wbn_lowReputationWarningBannerSet) {
         var posterReputationLow = '<div class="wbn_lowReputationBanner wbn_banner wbn_warningBanner wbn_hidden">Poster reputation score is below ' + cfg_questionPosterReputationThreshold + ' points</div>';
-        $(posterReputationLow).insertBefore("#question-header");
+        if (cfg_enableLowReputationWarningAboveQuestion) {
+            $(posterReputationLow).insertBefore("#question-header");
+        }
         $(posterReputationLow).insertBefore("#post-editor"); 
         
         wbn_lowReputationWarningBannerSet = true;
