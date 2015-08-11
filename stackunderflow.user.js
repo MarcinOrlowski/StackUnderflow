@@ -102,19 +102,19 @@ function updateDisplay() {
     var hasAcceptedAnswer = $("#answers .answer.accepted-answer")[0];
     
     // plant banners
-
     if (!wbn_oldQuestionBannerSet) {
         var daysOld = Math.round((new Date().getTime() - postedDateMillis) / 86400000);
         if (daysOld > cfg_oldQuestionDayThreshold) {
             var oldAnswerBanner = '<div id="wbn_oldAnswer" class="wbn_banner wbn_tooOldBanner">Question was asked ' + jQuery.timeago(postedDateMillis) + '</div>';
-            $(oldAnswerBanner).insertBefore("#question-header");
+            if (!hasAcceptedAnswer) {
+                $(oldAnswerBanner).insertBefore("#question-header");
+            }
             $(oldAnswerBanner).insertBefore("#post-editor"); 
         }
         
         wbn_oldQuestionBannerSet = true;
     }
 
-    
     if (!wbn_questionHasAcceptedAnswerBannerSet) {        
         if (hasAcceptedAnswer) {
             var hasAnswerBanner = '<div id="wbn_questionHasAcceptedAnswer" class="wbn_banner wbn_okBanner">Question has accepted answer</div>';
@@ -128,7 +128,7 @@ function updateDisplay() {
             wbn_questionHasAcceptedAnswerBannerSet = true;
         }
     }
-
+    
     if (!wbn_postedByBlacklistedUserBannerSet) {
         var blacklistedUserPostBanner = '<div class="wbn_postedByBlacklistedUserBanner wbn_banner wbn_blacklistedBanner wbn_hidden"><img class="wbn_userActionIcon" src="' + cfg_userBlacklistedOnUrl + '"> Question asked by blacklisted user</div>';
         $(blacklistedUserPostBanner).insertBefore("#question-header");
