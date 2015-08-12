@@ -42,6 +42,9 @@ I created this script with my needs in mind, however I hope you find it useful t
 Marcin Orlowski
 
 ### Changelog
+ - v0.4 (2015-__-__)
+  - Script was not working when user was not signed in to SO
+
  - v0.3 (2015-08-11)
   - Added "question too old" warning feature (default threshold is 30 days)
 
