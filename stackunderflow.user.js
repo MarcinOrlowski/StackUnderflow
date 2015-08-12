@@ -44,7 +44,6 @@ var cfg_userBlacklistedOffUrl = "https://raw.githubusercontent.com/MarcinOrlowsk
 var cfg_userFavouriteOnUrl = "https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png";
 var cfg_userFavouriteOffUrl = "https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png";
 
-
 //--[ DO NOT ALTER ANYTHING BELOW ]---------------------------------------------------
 
 var wbn_postedByBlacklistedUserBannerSet = false;
@@ -58,7 +57,12 @@ var wbn_favouriteEntryPrefix = "favourite_";
 
 //-----------------------------------------------------
 
-var myId = $(".topbar-links > a").attr("href").split("/")[2];
+var myId = 0;
+var isSignedIn = ($(".topbar-links > a.profile-me").length > 0);
+
+if (isSignedIn) {
+    $(".topbar-links > a.profile-me").attr("href").split("/")[2];
+}
 
 var posterRoot = $(".post-signature.owner");
 var posterName = posterRoot.find(".user-details > a").text();
@@ -76,6 +80,7 @@ if (posterReputation == "") {
         posterReputation = posterReputation.replace("k","") * 1000;
     }
 }
+
 
 //$('body').append('<div id="SOINFO">myId: ' + myId + "<br/>pName: " + posterName + "<br/>pId: " + posterId + "<br/>pRep: " + posterReputation + "<br/>");
 //$("#SOINFO").css("position", "fixed").css("background", "red").css("top", 0).css("left", 0);
