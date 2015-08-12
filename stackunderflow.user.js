@@ -61,7 +61,7 @@ var myId = 0;
 var isSignedIn = ($(".topbar-links > a.profile-me").length > 0);
 
 if (isSignedIn) {
-    $(".topbar-links > a.profile-me").attr("href").split("/")[2];
+    myId = $(".topbar-links > a.profile-me").attr("href").split("/")[2];
 }
 
 var posterRoot = $(".post-signature.owner");
