@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    http://webnetmobile.com/
-// @version      0.3
+// @version      0.4
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
@@ -106,7 +106,7 @@ function updateDisplay() {
     var isPosterBlacklisted = isBlacklisted(posterId);
 
     // update banners
-    var hasAcceptedAnswer = $("#answers .answer.accepted-answer")[0];
+    var hasAcceptedAnswer = ($("#answers .answer.accepted-answer").length > 0);
     
     // plant banners
     if (!wbn_oldQuestionBannerSet) {
@@ -210,7 +210,7 @@ function updateUserLinksRaw(index, element) {
             var blacklistId = "wbn_blacklist_" + userId + "_" + index;
             var blLabel = isBl ? "Click to remove this user from blacklist" : "Click to blacklist this user";
             var blIconUrl = isBl ? cfg_userBlacklistedOnUrl : cfg_userBlacklistedOffUrl;
-            if ($("#" + blacklistId)[0]) {
+            if ($("#" + blacklistId).length) {
                 var blIcon = $("#" + blacklistId + " > img");
                 blIcon.attr("src", blIconUrl);
                 blIcon.attr("alt", blLabel);
@@ -231,7 +231,7 @@ function updateUserLinksRaw(index, element) {
             var favId = "wbn_favourite_" + userId + "_" + index;
             var favLabel = isFav ? "Click to remove from favourites" : "Click to mark user as your favourite";
             var favIconUrl = isFav ? cfg_userFavouriteOnUrl : cfg_userFavouriteOffUrl;
-            if ($("#" + favId)[0]) {
+            if ($("#" + favId).length) {
                 var favIcon = $("#" + favId + " > img");
                 favIcon.attr("src", favIconUrl);
                 favIcon.attr("alt", favLabel);
