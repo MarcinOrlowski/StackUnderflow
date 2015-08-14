@@ -85,6 +85,8 @@ if (posterReputation == "") {
 //$('body').append('<div id="SOINFO">myId: ' + myId + "<br/>pName: " + posterName + "<br/>pId: " + posterId + "<br/>pRep: " + posterReputation + "<br/>");
 //$("#SOINFO").css("position", "fixed").css("background", "red").css("top", 0).css("left", 0);
 
+$("#sidebar").prepend('<div><table><tr><td><p class="label-key">enchanced by</p></td><td style="padding-left: 10px; vertical-align: top;"><b><a target="_blank" href="https://github.com/MarcinOrlowski/StackUnderflow">StackUnderflow</a></b></td></tr></table></div>');
+
 addStyles();
 updateDisplay();
 
