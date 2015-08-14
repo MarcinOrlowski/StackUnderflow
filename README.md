@@ -5,7 +5,7 @@
  Once it runs, you should easily notice additional icons added to info box of author of each question or answer:
 
 ![New icons](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_icons.png)
-additionally 
+
  1. indicates whenever you consider this user your favourite (starred) one ![starred](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png) or just regular one ![regular user](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png). 
  2. indicates whenever user is on your blacklist ![blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-on.png) or not ![not blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-off.png)
 
