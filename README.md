@@ -39,9 +39,16 @@ All questions asked by either your favourite users will be additionally marked:
 ### Future
 I created this script with my needs in mind, however I hope you find it useful too. If you find a bug, feel free to report it or send pull request. If you miss a feature, use GitHub "issues" to let me know.
 
+### Resources
+ * [GitHub project page](https://github.com/MarcinOrlowski/StackUnderflow)
+ * [Project bugs/features tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues)
+
 Marcin Orlowski
 
 ### Changelog
+ - v0.4 (2015-08-14)
+  - Script was not working when user was not signed in to SO
+
  - v0.3 (2015-08-11)
   - Added "question too old" warning feature (default threshold is 30 days)
 
