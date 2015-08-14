@@ -25,6 +25,8 @@ All questions asked by either your favourite users will be additionally marked:
 
 ![accepted answer highlight](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_accepted_answer.png)
 
+--------------------------------
+
 ### Installation
  To enjoy StackUnderflow you need to
 
@@ -37,7 +39,7 @@ All questions asked by either your favourite users will be additionally marked:
  As for now configuration features are limited and there's no configuration dialog yet. Some features are however configurable directly in the script, so once installed, open script for edit and you can find all `cfg_....` parameters at the beginig of the script. Tweak as you need, save and reload target StackOverflow page.
 
 ### Future
-I created this script with my needs in mind, however I hope you find it useful too. If you find a bug, feel free to report it or send pull request. If you miss a feature, use GitHub "issues" to let me know.
+I created this script with my needs in mind, however I hope you find it useful too. I am also open for new features ideas or code! If you find a bug, feel free to report it or even send pull request. If you miss a feature, use [GitHub issues tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues) to let me know.
 
 ### Resources
  * [GitHub project page](https://github.com/MarcinOrlowski/StackUnderflow)
@@ -45,6 +47,8 @@ I created this script with my needs in mind, however I hope you find it useful t
 
 ### Author
  Marcin Orlowski
+
+--------------------------------
 
 ### Changelog
  - v0.4 (2015-08-14)
