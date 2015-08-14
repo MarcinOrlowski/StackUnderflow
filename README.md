@@ -5,7 +5,7 @@
  Once it runs, you should easily notice additional icons added to info box of author of each question or answer:
 
 ![New icons](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_icons.png)
-additnionaly 
+additionally 
  1. indicates whenever user is on your blacklist ![blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-on.png) or not ![not blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-off.png)
  2. indicates whenever you consider this user your favourite (starred) one ![starred](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png) or just regular one ![regular user](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png). 
 
@@ -21,7 +21,7 @@ All questions asked by either your favourite users will be additionally marked:
 
 ![blacklisted user question](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_banner_blacklisted_user_question.png)
 
- If question is already answered, similar notice will be shown and accepted answer will be additionaly highlighted:
+ If question is already answered, similar notice will be shown and accepted answer will be additionally highlighted:
 
 ![accepted answer highlight](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_accepted_answer.png)
 
