@@ -43,7 +43,8 @@ I created this script with my needs in mind, however I hope you find it useful t
  * [GitHub project page](https://github.com/MarcinOrlowski/StackUnderflow)
  * [Project bugs/features tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues)
 
-Marcin Orlowski
+### Author
+ Marcin Orlowski
 
 ### Changelog
  - v0.4 (2015-08-14)
