@@ -46,6 +46,9 @@ I created this script with my needs in mind, however I hope you find it useful t
 Marcin Orlowski
 
 ### Changelog
+ - v0.5 ()
+  - Star, blacklisted icons are now also shown on question index
+
  - v0.4 (2015-08-14)
   - Script was not working when user was not signed in to SO
 
