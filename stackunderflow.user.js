@@ -80,20 +80,20 @@ function updateUserIndexLinksRaw(index, element) {
     var userId = (element.find("a")[1] + "").split("/")[4];
     if (userId !== undefined) {
         if (isBlacklisted(userId)) {
-            element.find("a.started-link").after('<img class="wbn_userActionIconSmall" width="14" height="14" src="'+cfg_userBlacklistedOnUrl+'">');
+            element.find("a.started-link").after('<img class="wbn_userActionIconSmall" width="14" height="14" src="' + cfg_userBlacklistedOnUrl + '">');
         } else if (isFavourite(userId)) {
-            element.find("a.started-link").after('<img class="wbn_userActionIconSmall" width="14" height="14" src="'+cfg_userFavouriteOnUrl+'">');
+            element.find("a.started-link").after('<img class="wbn_userActionIconSmall" width="14" height="14" src="' + cfg_userFavouriteOnUrl + '">');
         }
     }
 }
 
 
-var posterRoot = 0;
-var posterName = "";
-var posterId = 0;
-var postedDateMillis = 0;
-var posterReputation = 0;
- 
+var posterRoot;
+var posterName;
+var posterId;
+var postedDateMillis;
+var posterReputation;
+
 function processQuestion() {
     posterRoot = $(".post-signature.owner");
     posterName = posterRoot.find(".user-details > a").text();
@@ -134,7 +134,7 @@ function updateDisplay() {
 
     var isPosterFavourite = isFavourite(posterId);
     var isPosterBlacklisted = isBlacklisted(posterId);
-
+    
     // update banners
     var hasAcceptedAnswer = ($("#answers .answer.accepted-answer").length > 0);
     
@@ -255,7 +255,7 @@ function updateUserLinksRaw(index, element) {
                 blContainer.css("visibility", "hidden");
             }
 
-                        // favourite
+            // favourite
             var favId = "wbn_favourite_" + userId + "_" + index;
             var favLabel = isFav ? "Click to remove from favourites" : "Click to mark user as your favourite";
             var favIconUrl = isFav ? cfg_userFavouriteOnUrl : cfg_userFavouriteOffUrl;
