@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         StackUnderflow
-// @namespace    http://webnetmobile.com/
+// @namespace    marcinorlowski.com/tampermonkey/stackunderflow
 // @version      0.5
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
