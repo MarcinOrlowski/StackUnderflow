@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    http://webnetmobile.com/
-// @version      0.4
+// @version      0.5
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
-// @match        https://stackoverflow.com/questions/*
+// @match        https://stackoverflow.com/*
+// @match        https://www.stackoverflow.com/*
 // @require      https://code.jquery.com/jquery-latest.js
 // @require      https://raw.githubusercontent.com/rmm5t/jquery-timeago/master/jquery.timeago.js
 // @grant        GM_addStyle
@@ -46,17 +47,6 @@ var cfg_userFavouriteOffUrl = "https://raw.githubusercontent.com/MarcinOrlowski/
 
 //--[ DO NOT ALTER ANYTHING BELOW ]---------------------------------------------------
 
-var wbn_postedByBlacklistedUserBannerSet = false;
-var wbn_questionHasAcceptedAnswerBannerSet = false;
-var wbn_lowReputationWarningBannerSet = false;
-var wbn_postedByFavouriteUserBannerSet = false;
-var wbn_oldQuestionBannerSet = false
-
-var wbn_blacklistedEntryPrefix = "blacklisted_";
-var wbn_favouriteEntryPrefix = "favourite_";
-
-//-----------------------------------------------------
-
 var myId = 0;
 var isSignedIn = ($(".topbar-links > a.profile-me").length > 0);
 
@@ -64,29 +54,69 @@ if (isSignedIn) {
     myId = $(".topbar-links > a.profile-me").attr("href").split("/")[2];
 }
 
-var posterRoot = $(".post-signature.owner");
-var posterName = posterRoot.find(".user-details > a").text();
-var posterId = posterRoot.find(".user-details > a").attr("href").split("/")[2];
-var postedDateMillis = Date.parse(posterRoot.find(".user-info > .user-action-time > .relativetime").attr("title"));
+var wbn_postedByBlacklistedUserBannerSet = false;
+var wbn_questionHasAcceptedAnswerBannerSet = false;
+var wbn_lowReputationWarningBannerSet = false;
+var wbn_postedByFavouriteUserBannerSet = false;
+var wbn_oldQuestionBannerSet = false;
 
-var posterReputation = posterRoot.find(".reputation-score").attr("title").split(" ")[2];
-// poster reputation missing in title of for some questions (most likely SO bug):
-// https://stackoverflow.com/questions/31902812/  https://stackoverflow.com/questions/5937121/
-if (posterReputation == "") {
-    posterReputation = posterRoot.find(".reputation-score").text().replace(" ","").replace(",", "");
-    // check if we got only digits here. If not, we we assume we have "k" suffix
-    var reg = new RegExp("[0-9]");
-    if (!reg.test(posterReputation)) {
-        posterReputation = posterReputation.replace("k","") * 1000;
+var wbn_blacklistedEntryPrefix = "blacklisted_";
+var wbn_favouriteEntryPrefix = "favourite_";
+
+//-----------------------------------------------------
+
+var pageUrl = window.location.href.split("/");
+if (pageUrl.length > 4) {
+    if (pageUrl[3] == 'questions') {
+        processQuestion();
+    }
+} else {
+    $("div.started").each(function(index){updateUserIndexLinksRaw(index,$(this));});
+}
+
+//-----------------------------------------------------
+
+function updateUserIndexLinksRaw(index, element) {
+    var userId = (element.find("a")[1] + "").split("/")[4];
+    if (userId !== undefined) {
+        if (isBlacklisted(userId)) {
+            element.find("a.started-link").after('<img class="wbn_userActionIconSmall" width="14" height="14" src="'+cfg_userBlacklistedOnUrl+'">');
+        } else if (isFavourite(userId)) {
+            element.find("a.started-link").after('<img class="wbn_userActionIconSmall" width="14" height="14" src="'+cfg_userFavouriteOnUrl+'">');
+        }
     }
 }
 
 
-//$('body').append('<div id="SOINFO">myId: ' + myId + "<br/>pName: " + posterName + "<br/>pId: " + posterId + "<br/>pRep: " + posterReputation + "<br/>");
-//$("#SOINFO").css("position", "fixed").css("background", "red").css("top", 0).css("left", 0);
+var posterRoot = 0;
+var posterName = "";
+var posterId = 0;
+var postedDateMillis = 0;
+var posterReputation = 0;
+ 
+function processQuestion() {
+    posterRoot = $(".post-signature.owner");
+    posterName = posterRoot.find(".user-details > a").text();
+    posterId = posterRoot.find(".user-details > a").attr("href").split("/")[2];
+    postedDateMillis = Date.parse(posterRoot.find(".user-info > .user-action-time > .relativetime").attr("title"));
 
-addStyles();
-updateDisplay();
+    posterReputation = posterRoot.find(".reputation-score").attr("title").split(" ")[2];
+    // poster reputation missing in title of for some questions (most likely SO bug):
+    // https://stackoverflow.com/questions/31902812/  https://stackoverflow.com/questions/5937121/
+    if (posterReputation === "") {
+        posterReputation = posterRoot.find(".reputation-score").text().replace(" ","").replace(",", "");
+        // check if we got only digits here. If not, we we assume we have "k" suffix
+        var reg = new RegExp("[0-9]");
+        if (!reg.test(posterReputation)) {
+            posterReputation = posterReputation.replace("k","") * 1000;
+        }
+    }
+
+    $("#sidebar").prepend('<div><table><tr><td><p class="label-key">enchanced by</p></td><td style="padding-left: 10px; vertical-align: top;"><b><a target="_blank" href="https://github.com/MarcinOrlowski/StackUnderflow">StackUnderflow</a></b></td></tr></table></div>');
+
+    addStyles();
+    updateDisplay();
+}
 
 //-----------------------------------------------------
 
@@ -187,9 +217,7 @@ function updateDisplay() {
     } else {
         $(".wbn_lowReputationBanner").hide();
     }
-        
 
-    
     // update links
     $("td.post-signature > .user-info").each(function(index){updateUserLinksRaw(index,$(this));});
     
@@ -340,6 +368,12 @@ GM_addStyle ( multilineStr ( function () {/*!
         height: 18px;
         border: 0;
         padding: 2px;
+        vertical-align: middle;
+    }
+
+    .wbn_userActionIconSmall {
+        border: 0;
+        padding: 0px;
         vertical-align: middle;
     }
 
