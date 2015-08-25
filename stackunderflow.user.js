@@ -463,7 +463,7 @@ GM_addStyle ( multilineStr ( function () {/*!
     }
 
     .wbn_tooOldBanner {
-        background: #FFB028;
+        background: #FFA394;
         color: black;
     }
 
