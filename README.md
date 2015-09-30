@@ -51,6 +51,10 @@ I created this script with my needs in mind, however I hope you find it useful t
 --------------------------------
 
 ### Changelog
+ - v0.5 ()
+  - Augmented question index with star, blacklisted icons (if set)
+  - Augmented users' profile page
+
  - v0.4 (2015-08-14)
   - Script was not working when user was not signed in to SO
 
