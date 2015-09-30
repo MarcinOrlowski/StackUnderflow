@@ -6,7 +6,7 @@
 
 ![New icons](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_icons.png)
 
- 1. indicates whenever you consider this user your favourite (starred) one ![starred](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png) or just regular one ![regular user](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png). 
+ 1. indicates whenever you consider this user your favourite (starred) one ![starred](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png) or just regular one ![regular user](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png).
  2. indicates whenever user is on your blacklist ![blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-on.png) or not ![not blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-off.png)
 
 To toggle state of each feature, simply tap corresponding icon. If unsure what would happen, hoover mouse pointer over it to see the tooltip with more information.
@@ -51,7 +51,7 @@ I created this script with my needs in mind, however I hope you find it useful t
 --------------------------------
 
 ### Changelog
- - v0.5 ()
+ - v0.5 (2015-09-30)
   - Augmented question index with star, blacklisted icons (if set)
   - Augmented users' profile page
 
@@ -64,6 +64,6 @@ I created this script with my needs in mind, however I hope you find it useful t
  - v0.2 (2015-08-10)
   - Added action icons
   - Fixed handling of users answering own question
-  
+
  - v0.1 (2015-08-09)
   - Initial release
