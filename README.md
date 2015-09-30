@@ -6,8 +6,8 @@
 
 ![New icons](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_icons.png)
 
- 1. indicates whenever user is on your blacklist ![blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-on.png) or not ![not blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-off.png)
- 2. indicates whenever you consider this user your favourite (starred) one ![starred](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png) or just regular one ![regular user](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png). 
+ 1. indicates whenever you consider this user your favourite (starred) one ![starred](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-on.png) or just regular one ![regular user](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-favourite-off.png). 
+ 2. indicates whenever user is on your blacklist ![blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-on.png) or not ![not blacklisted](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/user-blacklisted-off.png)
 
 To toggle state of each feature, simply tap corresponding icon. If unsure what would happen, hoover mouse pointer over it to see the tooltip with more information.
 
@@ -21,9 +21,11 @@ All questions asked by either your favourite users will be additionally marked:
 
 ![blacklisted user question](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_banner_blacklisted_user_question.png)
 
- If question is already answered, similar notice will be shown and accepted answer will be additnionaly highlighted:
+ If question is already answered, similar notice will be shown and accepted answer will be additionally highlighted:
 
 ![accepted answer highlight](https://raw.githubusercontent.com/MarcinOrlowski/StackUnderflow/master/img/docs_accepted_answer.png)
+
+--------------------------------
 
 ### Installation
  To enjoy StackUnderflow you need to
@@ -37,13 +39,16 @@ All questions asked by either your favourite users will be additionally marked:
  As for now configuration features are limited and there's no configuration dialog yet. Some features are however configurable directly in the script, so once installed, open script for edit and you can find all `cfg_....` parameters at the beginig of the script. Tweak as you need, save and reload target StackOverflow page.
 
 ### Future
-I created this script with my needs in mind, however I hope you find it useful too. If you find a bug, feel free to report it or send pull request. If you miss a feature, use GitHub "issues" to let me know.
+I created this script with my needs in mind, however I hope you find it useful too. I am also open for new features ideas or code! If you find a bug, feel free to report it or even send pull request. If you miss a feature, use [GitHub issues tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues) to let me know.
 
 ### Resources
  * [GitHub project page](https://github.com/MarcinOrlowski/StackUnderflow)
  * [Project bugs/features tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues)
 
-Marcin Orlowski
+### Author
+ Marcin Orlowski
+
+--------------------------------
 
 ### Changelog
  - v0.5 ()
