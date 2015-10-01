@@ -241,7 +241,7 @@ function augmentQuestion() {
         }
     }
 
-    $("#sidebar").prepend('<div><table><tr><td><p class="label-key">enchanced by</p></td><td style="padding-left: 10px; vertical-align: top;"><b><a target="_blank" href="https://github.com/MarcinOrlowski/StackUnderflow">StackUnderflow</a></b></td></tr></table></div>');
+    $("#sidebar").prepend('<div><table><tr><td><p class="label-key">enhanced by</p></td><td style="padding-left: 10px; vertical-align: top;"><b><a target="_blank" href="https://github.com/MarcinOrlowski/StackUnderflow">StackUnderflow</a></b></td></tr></table></div>');
 
     updateQuestionAugmentation();
 }
