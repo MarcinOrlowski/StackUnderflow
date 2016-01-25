@@ -1,6 +1,6 @@
 ### StackUnderflow
 
- StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with [StackOverflow.com](https://StackOverflow.com).
+ StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with StackExchange sites like [StackOverflow.com](https://StackOverflow.com), [ServerFault.com](https://ServerFault.com), [SuperUser.com](https://SuperUser.com) and [StackExchange.com](https://StackExchange.com).
 
  Once it runs, you should easily notice additional icons added to info box of author of each question or answer:
 
@@ -51,6 +51,9 @@ I created this script with my needs in mind, however I hope you find it useful t
 --------------------------------
 
 ### Changelog
+ - v1.1.0 (2016-xx-xx)
+  - More StackExchange's sites supported (serverfault, superuser, stackexchange)
+
  - v1.0.0 (2016-01-25)
   - Added option to disable user blacklist/favlist action buttons
 
