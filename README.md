@@ -51,10 +51,13 @@ I created this script with my needs in mind, however I hope you find it useful t
 --------------------------------
 
 ### Changelog
+ - v1.0.0 (2016-01-25)
+  - Added option to disable user blacklist/favlist action buttons
+
  - v0.5 (2015-09-30)
   - Augmented question index with star, blacklisted icons (if set)
   - Augmented users' profile page
-  - Fixed script not working when accesaing StackOverflow on non SSL secured connection
+  - Fixed script not working when accesing StackOverflow on non SSL secured connection
 
  - v0.4 (2015-08-14)
   - Script was not working when user was not signed in to SO
