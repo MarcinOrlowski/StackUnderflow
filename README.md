@@ -1,6 +1,6 @@
 ### StackUnderflow
 
- StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with StackExchange sites like [StackOverflow.com](https://StackOverflow.com), [ServerFault.com](https://ServerFault.com), [SuperUser.com](https://SuperUser.com) and [StackExchange.com](https://StackExchange.com).
+ StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with StackExchange sites like [StackOverflow.com](https://StackOverflow.com), [ServerFault.com](https://ServerFault.com), [SuperUser.com](https://SuperUser.com), [StackApps.com](https://StackApps.com) and [StackExchange.com](https://StackExchange.com).
 
  Once it runs, you should easily notice additional icons added to info box of author of each question or answer:
 
