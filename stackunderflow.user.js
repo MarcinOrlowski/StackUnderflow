@@ -1,14 +1,15 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    marcinorlowski.com/tampermonkey/stackunderflow
-// @version      1.0.0
+// @version      1.1.0
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
-// @match        https://stackoverflow.com/*
-// @match        http://stackoverflow.com/*
-// @match        https://www.stackoverflow.com/*
-// @match        http://www.stackoverflow.com/*
+// @include      /^https?:\/\/(.*\.)?stackoverflow\.com/.*$/
+// @include      /^https?:\/\/(.*\.)?serverfault\.com/.*$/
+// @include      /^https?:\/\/(.*\.)?superuser\.com/.*$/
+// @include      /^https?:\/\/(.*\.)?stackexchange\.com/.*$/
+// @include      /^https?:\/\/stackapps\.com/.*$/
 // @require      https://code.jquery.com/jquery-latest.js
 // @require      https://raw.githubusercontent.com/rmm5t/jquery-timeago/master/jquery.timeago.js
 // @grant        GM_addStyle
