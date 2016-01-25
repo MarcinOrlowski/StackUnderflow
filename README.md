@@ -52,7 +52,7 @@ I created this script with my needs in mind, however I hope you find it useful t
 
 ### Changelog
  - v1.1.0 (2016-xx-xx)
-  - More StackExchange's sites supported (serverfault, superuser, stackexchange)
+  - More StackExchange's sites supported (ServerFault, SuperUser, StackApps, StackExchange)
 
  - v1.0.0 (2016-01-25)
   - Added option to disable user blacklist/favlist action buttons
