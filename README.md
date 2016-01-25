@@ -30,10 +30,13 @@ All questions asked by either your favourite users will be additionally marked:
 ### Installation
  To enjoy StackUnderflow you need to
 
-  - install user script host extension:
-    - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) (Chrome and compatible browsers) or
-    - [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) (Firefox)
-  - install StackUnderflow script by [clicking here](https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js) - script shall be automatically installed and ready to use.
+  - install user script host extension for your web browser:
+    - Chrome and compatible browsers - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
+    - Firefox - [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+  - install StackUnderflow script:
+    - Get **Official, stable version** by [clicking here](https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js) 
+    - If you are brave, you may try **Development** version by [clicking here](https://github.com/MarcinOrlowski/StackUnderflow/raw/dev/stackunderflow.user.js)
+  - script will  be fetched, installed and ready to use. No browser restart required. If you got some SO's pages opened, you need to reload them for script to kick off though.
 
 ### Configuration
  As for now configuration features are limited and there's no configuration dialog yet. Some features are however configurable directly in the script, so once installed, open script for edit and you can find all `cfg_....` parameters at the beginig of the script. Tweak as you need, save and reload target StackOverflow page.
