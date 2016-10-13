@@ -1,6 +1,6 @@
 ### StackUnderflow
 
- StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with [StackOverflow.com](https://StackOverflow.com).
+ StackUnderflow is Greasemonkey/Tampermonkey (or compatible) user script that aims to improve your experience with StackExchange sites like [StackOverflow.com](https://StackOverflow.com), [ServerFault.com](https://ServerFault.com), [SuperUser.com](https://SuperUser.com), [StackApps.com](https://StackApps.com) and [StackExchange.com](https://StackExchange.com).
 
  Once it runs, you should easily notice additional icons added to info box of author of each question or answer:
 
@@ -30,15 +30,18 @@ All questions asked by either your favourite users will be additionally marked:
 ### Installation
  To enjoy StackUnderflow you need to
 
-  - install user script host extension:
-    - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) (Chrome and compatible browsers) or
-    - [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) (Firefox)
-  - install StackUnderflow script by [clicking here](https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js) - script shall be automatically installed and ready to use.
+  - install user script host extension for your web browser:
+    - Chrome and compatible browsers - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
+    - Firefox - [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+  - install StackUnderflow script:
+    - Get **Official, stable version** by [clicking here](https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js) 
+    - If you are brave, you may try **Development** version by [clicking here](https://github.com/MarcinOrlowski/StackUnderflow/raw/dev/stackunderflow.user.js)
+  - script will  be fetched, installed and ready to use. No browser restart required. If you got some SO's pages opened, you need to reload them for script to kick off though.
 
 ### Configuration
  As for now configuration features are limited and there's no configuration dialog yet. Some features are however configurable directly in the script, so once installed, open script for edit and you can find all `cfg_....` parameters at the beginig of the script. Tweak as you need, save and reload target StackOverflow page.
 
-### Future
+### Your contribution
 I created this script with my needs in mind, however I hope you find it useful too. I am also open for new features ideas or code! If you find a bug, feel free to report it or even send pull request. If you miss a feature, use [GitHub issues tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues) to let me know.
 
 ### Resources
@@ -51,6 +54,9 @@ I created this script with my needs in mind, however I hope you find it useful t
 --------------------------------
 
 ### Changelog
+ - v1.0.1 (2016-10-13)
+  - More StackExchange's sites supported (ServerFault, SuperUser, StackApps, StackExchange)
+
  - v1.0.0 (2016-01-25)
   - Added option to disable user blacklist/favlist action buttons
 
