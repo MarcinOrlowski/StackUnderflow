@@ -54,7 +54,7 @@ I created this script with my needs in mind, however I hope you find it useful t
 --------------------------------
 
 ### Changelog
- - v1.0.1 (2016-10-13)
+ - v1.1.0 (2016-10-13)
   - More StackExchange's sites supported (ServerFault, SuperUser, StackApps, StackExchange)
 
  - v1.0.0 (2016-01-25)
