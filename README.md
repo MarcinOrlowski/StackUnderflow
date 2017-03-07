@@ -48,8 +48,11 @@ I created this script with my needs in mind, however I hope you find it useful t
  * [GitHub project page](https://github.com/MarcinOrlowski/StackUnderflow)
  * [Project bugs/features tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues)
 
-### Author
- Marcin Orlowski
+## License ##
+
+* Written and copyrighted &copy;2016-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+* StackUnderflow is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
 
 --------------------------------
 
