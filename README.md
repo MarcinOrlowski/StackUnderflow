@@ -38,21 +38,30 @@ All questions asked by either your favourite users will be additionally marked:
     - If you are brave, you may try **Development** version by [clicking here](https://github.com/MarcinOrlowski/StackUnderflow/raw/dev/stackunderflow.user.js)
   - script will  be fetched, installed and ready to use. No browser restart required. If you got some SO's pages opened, you need to reload them for script to kick off though.
 
+--------------------------------
+
 ### Configuration
  As for now configuration features are limited and there's no configuration dialog yet. Some features are however configurable directly in the script, so once installed, open script for edit and you can find all `cfg_....` parameters at the beginig of the script. Tweak as you need, save and reload target StackOverflow page.
+
+--------------------------------
 
 ### Your contribution
 I created this script with my needs in mind, however I hope you find it useful too. I am also open for new features ideas or code! If you find a bug, feel free to report it or even send pull request. If you miss a feature, use [GitHub issues tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues) to let me know.
 
+--------------------------------
+
 ### Resources
  * [GitHub project page](https://github.com/MarcinOrlowski/StackUnderflow)
  * [Project bugs/features tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues)
+
+--------------------------------
 
 ## License ##
 
 * Written and copyrighted &copy;2016-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
 * StackUnderflow is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
+--------------------------------
 
 
 ### Changelog
