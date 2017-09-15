@@ -38,21 +38,61 @@ All questions asked by either your favourite users will be additionally marked:
     - If you are brave, you may try **Development** version by [clicking here](https://github.com/MarcinOrlowski/StackUnderflow/raw/dev/stackunderflow.user.js)
   - script will  be fetched, installed and ready to use. No browser restart required. If you got some SO's pages opened, you need to reload them for script to kick off though.
 
+--------------------------------
+
 ### Configuration
  As for now configuration features are limited and there's no configuration dialog yet. Some features are however configurable directly in the script, so once installed, open script for edit and you can find all `cfg_....` parameters at the beginig of the script. Tweak as you need, save and reload target StackOverflow page.
+
+--------------------------------
 
 ### Your contribution
 I created this script with my needs in mind, however I hope you find it useful too. I am also open for new features ideas or code! If you find a bug, feel free to report it or even send pull request. If you miss a feature, use [GitHub issues tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues) to let me know.
 
+--------------------------------
+
 ### Resources
  * [GitHub project page](https://github.com/MarcinOrlowski/StackUnderflow)
  * [Project bugs/features tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues)
+
 
 ## License ##
 
 * Written and copyrighted &copy;2016-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
 * StackUnderflow is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
+
+
+### Changelog
+
+ - v1.1.1 (2017-09-15)
+  - [#12] Updated code to correctly handle sites' changes (fix by @bertrandmartel - thank you!)
+
+ - v1.1.0 (2016-10-13)
+  - More StackExchange's sites supported (ServerFault, SuperUser, StackApps, StackExchange)
+
+ - v1.0.0 (2016-01-25)
+  - Added option to disable user blacklist/favlist action buttons
+
+ - v0.5 (2015-09-30)
+  - Augmented question index with star, blacklisted icons (if set)
+  - Augmented users' profile page
+  - Fixed script not working when accesing StackOverflow on non SSL secured connection
+
+ - v0.4 (2015-08-14)
+  - Script was not working when user was not signed in to SO
+
+ - v0.3 (2015-08-11)
+  - Added "question too old" warning feature (default threshold is 30 days)
+
+=======
+--------------------------------
+
+## License ##
+
+* Written and copyrighted &copy;2016-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+* StackUnderflow is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+--------------------------------
 
 
 ### Changelog
