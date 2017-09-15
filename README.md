@@ -54,9 +54,12 @@ I created this script with my needs in mind, however I hope you find it useful t
 * StackUnderflow is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 
---------------------------------
 
 ### Changelog
+
+ - v1.1.1 (2017-09-15)
+  - [#12] Updated code to correctly handle sites' changes (fix by @bertrandmartel - thank you!)
+
  - v1.1.0 (2016-10-13)
   - More StackExchange's sites supported (ServerFault, SuperUser, StackApps, StackExchange)
 
@@ -77,6 +80,3 @@ I created this script with my needs in mind, however I hope you find it useful t
  - v0.2 (2015-08-10)
   - Added action icons
   - Fixed handling of users answering own question
-
- - v0.1 (2015-08-09)
-  - Initial release
