@@ -55,10 +55,10 @@ var cfg_userFavouriteOffUrl = "https://raw.githubusercontent.com/MarcinOrlowski/
 //--[ DO NOT ALTER ANYTHING BELOW ]---------------------------------------------------
 
 var myId = 0;
-var isSignedIn = ($(".topbar-links > a.profile-me").length > 0);
+var isSignedIn = ($("a.my-profile").length > 0);
 
 if (isSignedIn) {
-    myId = $(".topbar-links > a.profile-me").attr("href").split("/")[2];
+    myId = $("a.my-profile").attr("href").split("/")[2];
 }
 
 var wbn_bannersSet = false;
