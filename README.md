@@ -48,7 +48,35 @@ I created this script with my needs in mind, however I hope you find it useful t
  * [GitHub project page](https://github.com/MarcinOrlowski/StackUnderflow)
  * [Project bugs/features tracker](https://github.com/MarcinOrlowski/StackUnderflow/issues)
 
-### Author
- Marcin Orlowski
+## License ##
+
+* Written and copyrighted &copy;2016-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+* StackUnderflow is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 
+
+### Changelog
+
+ - v1.1.1 (2017-09-15)
+  - [#12] Updated code to correctly handle sites' changes (fix by @bertrandmartel - thank you!)
+
+ - v1.1.0 (2016-10-13)
+  - More StackExchange's sites supported (ServerFault, SuperUser, StackApps, StackExchange)
+
+ - v1.0.0 (2016-01-25)
+  - Added option to disable user blacklist/favlist action buttons
+
+ - v0.5 (2015-09-30)
+  - Augmented question index with star, blacklisted icons (if set)
+  - Augmented users' profile page
+  - Fixed script not working when accesing StackOverflow on non SSL secured connection
+
+ - v0.4 (2015-08-14)
+  - Script was not working when user was not signed in to SO
+
+ - v0.3 (2015-08-11)
+  - Added "question too old" warning feature (default threshold is 30 days)
+
+ - v0.2 (2015-08-10)
+  - Added action icons
+  - Fixed handling of users answering own question
