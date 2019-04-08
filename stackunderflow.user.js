@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    marcinorlowski.com/tampermonkey/stackunderflow
-// @version      1.1.1
+// @version      1.2.0
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
