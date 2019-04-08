@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    marcinorlowski.com/tampermonkey/stackunderflow
-// @version      1.1.1
+// @version      1.2.0
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
@@ -97,7 +97,7 @@ function augmentUserProfile(userId) {
     if (userId == myId) {
         return;
     }
-    
+
     updateUserProfileAugmentation(userId);
 }
 
@@ -105,7 +105,7 @@ function updateUserProfileAugmentation(userId) {
 
     var isUserFavourite = isFavourite(userId);
     var isUserBlacklisted = isBlacklisted(userId);
-    
+
     if (!wbn_bannersSet) {
         var banner = '<div class="wbn_banners">'
                      + '<div class="wbn_postedByBlacklistedUserBanner wbn_banner wbn_blacklistedBanner wbn_hidden"><img class="wbn_userProfileActionIcon" src="' + cfg_userBlacklistedOnUrl + '"> User is on your blacklist</div>'
@@ -115,7 +115,7 @@ function updateUserProfileAugmentation(userId) {
 
         wbn_bannersSet = true;
     }
-    
+
     // show/hide banners
     if (cfg_enablePostedByBlacklistedUserWarning) {
         var blBanner = $(".wbn_postedByBlacklistedUserBanner");
@@ -127,7 +127,7 @@ function updateUserProfileAugmentation(userId) {
 //            $("#avatar-card").removeClass("wbn_blacklistedUserCard");
         }
     }
-    
+
     if (cfg_enablePostedByFavouriteUserWarning) {
         var favBanner = $(".wbn_postedByFavouriteUserBanner");
         if (isUserFavourite) {
@@ -139,7 +139,6 @@ function updateUserProfileAugmentation(userId) {
         }
     }
 
-    
     // action buttons (FIXME refactor!)
     if (cfg_enableBlackAndFavouriteLists) {
         var index = 0;
@@ -147,13 +146,12 @@ function updateUserProfileAugmentation(userId) {
 
         var actionId = "wbn_action_user_" + userId + "_" + index;
         $("#avatar-card").append('<div id="' + actionId + '"></div>');
-    
+
         // blacklist
         var blacklistId = "wbn_blacklist_" + userId + "_" + index;
         var blLabel = isUserBlacklisted ? "Click to remove this user from blacklist" : "Click to blacklist this user";
         var blIconUrl = isUserBlacklisted ? cfg_userBlacklistedOnUrl : cfg_userBlacklistedOffUrl;
-    
-    
+
         if ($("#" + blacklistId).length) {
             var blIcon = $("#" + blacklistId + " > img");
             blIcon.attr("src", blIconUrl);
@@ -184,7 +182,7 @@ function updateUserProfileAugmentation(userId) {
             $("#" + actionId).append('<a id="' + favId + '"><img class="wbn_userProfileActionIcon" title="' + favLabel + '" alt="' + favLabel + '" src="' + favIconUrl + '"></a>');
             $("#" + favId).click({userId: userId}, clickUserProfileToggleFavourite);
         }
-    
+
         var favContainer = $("#" + favId);
         if (!isUserBlacklisted) {
             favContainer.css("visibility", "visible");
@@ -203,7 +201,6 @@ function clickUserProfileToggleFavourite(event) {
     favouriteToggle(event.data.userId);
     updateUserProfileAugmentation(event.data.userId);
 }
-
 
 //-----------------------------------------------------
 
@@ -255,8 +252,6 @@ function augmentQuestion() {
 
 //-----------------------------------------------------
 
-
-
 function clickToggleBlacklist(event) {
     blacklistToggle(event.data.userId);
     updateQuestionAugmentation();
@@ -271,10 +266,10 @@ function updateQuestionAugmentation() {
 
     var isPosterFavourite = isFavourite(posterId);
     var isPosterBlacklisted = isBlacklisted(posterId);
-    
+
     // update banners
     var hasAcceptedAnswer = ($("#answers .answer.accepted-answer").length > 0);
-    
+
     // plant banners
     if (!wbn_oldQuestionBannerSet) {
         var daysOld = Math.round((new Date().getTime() - postedDateMillis) / 86400000);
@@ -283,18 +278,18 @@ function updateQuestionAugmentation() {
             if (!hasAcceptedAnswer) {
                 $(oldAnswerBanner).insertBefore("#question-header");
             }
-            $(oldAnswerBanner).insertBefore("#post-editor"); 
+            $(oldAnswerBanner).insertBefore("#post-editor");
         }
-        
+
         wbn_oldQuestionBannerSet = true;
     }
 
-    if (!wbn_questionHasAcceptedAnswerBannerSet) {        
+    if (!wbn_questionHasAcceptedAnswerBannerSet) {
         if (hasAcceptedAnswer) {
             var hasAnswerBanner = '<div id="wbn_questionHasAcceptedAnswer" class="wbn_banner wbn_okBanner">Question has accepted answer</div>';
             $(hasAnswerBanner).insertBefore("#question-header");
-            $(hasAnswerBanner).insertBefore("#post-editor"); 
-        
+            $(hasAnswerBanner).insertBefore("#post-editor");
+
             if (cfg_highlightAcceptedAnswer) {
                 $("#answers .answer.accepted-answer").addClass("wbn_acceptedAnswerHighlight");
             }
@@ -302,11 +297,11 @@ function updateQuestionAugmentation() {
             wbn_questionHasAcceptedAnswerBannerSet = true;
         }
     }
-    
+
     if (!wbn_postedByBlacklistedUserBannerSet) {
         var blacklistedUserPostBanner = '<div class="wbn_postedByBlacklistedUserBanner wbn_banner wbn_blacklistedBanner wbn_hidden"><img class="wbn_userActionIcon" src="' + cfg_userBlacklistedOnUrl + '"> Question asked by blacklisted user</div>';
         $(blacklistedUserPostBanner).insertBefore("#question-header");
-        $(blacklistedUserPostBanner).insertBefore("#post-editor"); 
+        $(blacklistedUserPostBanner).insertBefore("#post-editor");
 
         wbn_postedByBlacklistedUserBannerSet = true;
     }
@@ -323,11 +318,11 @@ function updateQuestionAugmentation() {
         if (cfg_enableLowReputationWarningAboveQuestion) {
             $(posterReputationLow).insertBefore("#question-header");
         }
-        $(posterReputationLow).insertBefore("#post-editor"); 
-        
+        $(posterReputationLow).insertBefore("#post-editor");
+
         wbn_lowReputationWarningBannerSet = true;
     }
-    
+
     // show/hide banners
     if (cfg_enablePostedByBlacklistedUserWarning) {
         var blBanner = $(".wbn_postedByBlacklistedUserBanner");
@@ -337,7 +332,7 @@ function updateQuestionAugmentation() {
             blBanner.hide();
         }
     }
-    
+
     if (cfg_enablePostedByFavouriteUserWarning) {
         var favBanner = $(".wbn_postedByFavouriteUserBanner");
         if (isPosterFavourite) {
@@ -369,7 +364,7 @@ function updateUserLinksRaw(index, element) {
         if (userId != myId ) {
             var isFav = isFavourite(userId);
             var isBl = isBlacklisted(userId);
-            
+
             var actionId = "wbn_action_user_" + userId + "_" + index;
             element.after('<div id="' + actionId + '"></div>');
 
@@ -407,14 +402,13 @@ function updateUserLinksRaw(index, element) {
                 $("#" + actionId).append('<a id="' + favId + '"><img class="wbn_userActionIcon" title="' + favLabel + '" alt="' + favLabel + '" src="' + favIconUrl + '"></a>');
                 $("#" + favId).click({userId: userId}, clickToggleFavourite);
             }
-            
+
             var favContainer = $("#" + favId);
             if (!isBl) {
                 favContainer.css("visibility", "visible");
             } else {
                 favContainer.css("visibility", "hidden");
             }
-
         }
     }
 }
@@ -456,7 +450,7 @@ GM_addStyle ( multilineStr ( function () {/*!
     .wbn_hidden {
         display: none;
     }
-    
+
     .wbn_banner {
         padding: 10px;
         text-align: center;
@@ -464,44 +458,44 @@ GM_addStyle ( multilineStr ( function () {/*!
     }
 
     .wbn_okBanner {
-        background: #E9FCF6;
-        color: black;
+        background: #E9FCF6 !important;
+        color: black !important;
     }
-    
+
     .wbn_warningBanner {
-        background: #CB5555;
-        color: white;
+        background: #CB5555 !important;
+        color: white !important;
     }
 
     .wbn_tooOldBanner {
-        background: #FFA394;
-        color: black;
+        background: #FFA394 !important;
+        color: black !important;
     }
 
     .wbn_favouriteBanner {
-        background: #FFDD00;
-        color: black;
+        background: #FFDD00 !important;
+        color: black !important;
     }
 
     .wbn_blacklistedBanner {
-        background: #333333;
-        color: white;
+        background: #333333 !important;
+        color: white !important;
     }
 
     .wbn_acceptedAnswerHighlight {
-        background: #E9FCF6;
+        background: #E9FCF6 !important;
     }
-    
+
     .wbn_blacklistLink {
-        background: #000000;
-        color: white;
+        background: black !important;
+        color: white !important;
     }
-    
+
     .wbn_favouriteLink {
-        background: #FFDD00;
-        color: black;
+        background: #FFDD00 !important;
+        color: black !important;
     }
-    
+
     .wbn_userActionIcon {
         width: 18px;
         height: 18px;
@@ -521,17 +515,17 @@ GM_addStyle ( multilineStr ( function () {/*!
         padding: 0px;
         vertical-align: middle;
     }
-    
+
     .wbn_banners {
         margin: 0px 0px 10px 0px;
     }
-    
+
     .wbn_favouriteUserCard {
-        background: #FFDD00;
+        background: #FFDD00 !important;
     }
-    
+
     .wbn_blacklistedUserCard {
-        background: #333333;
+        background: #333333 !important;
     }
 
 */} ) );
