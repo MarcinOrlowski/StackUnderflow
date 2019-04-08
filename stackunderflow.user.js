@@ -458,42 +458,42 @@ GM_addStyle ( multilineStr ( function () {/*!
     }
 
     .wbn_okBanner {
-        background: #E9FCF6;
-        color: black;
+        background: #E9FCF6 !important;
+        color: black !important;
     }
 
     .wbn_warningBanner {
-        background: #CB5555;
-        color: white;
+        background: #CB5555 !important;
+        color: white !important;
     }
 
     .wbn_tooOldBanner {
-        background: #FFA394;
-        color: black;
+        background: #FFA394 !important;
+        color: black !important;
     }
 
     .wbn_favouriteBanner {
-        background: #FFDD00;
-        color: black;
+        background: #FFDD00 !important;
+        color: black !important;
     }
 
     .wbn_blacklistedBanner {
-        background: #333333;
-        color: white;
+        background: #333333 !important;
+        color: white !important;
     }
 
     .wbn_acceptedAnswerHighlight {
-        background: #E9FCF6;
+        background: #E9FCF6 !important;
     }
 
     .wbn_blacklistLink {
-        background: #000000;
-        color: white;
+        background: black !important;
+        color: white !important;
     }
 
     .wbn_favouriteLink {
-        background: #FFDD00;
-        color: black;
+        background: #FFDD00 !important;
+        color: black !important;
     }
 
     .wbn_userActionIcon {
@@ -521,11 +521,11 @@ GM_addStyle ( multilineStr ( function () {/*!
     }
 
     .wbn_favouriteUserCard {
-        background: #FFDD00;
+        background: #FFDD00 !important;
     }
 
     .wbn_blacklistedUserCard {
-        background: #333333;
+        background: #333333 !important;
     }
 
 */} ) );
