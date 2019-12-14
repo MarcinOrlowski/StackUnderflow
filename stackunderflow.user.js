@@ -271,7 +271,7 @@ function updateQuestionAugmentation() {
     var hasAcceptedAnswer = ($("#answers .answer.accepted-answer").length > 0);
 
     // plant banners
-    if (!wbn_oldQuestionBannerSet) {
+    if (cfg_enableOldQuestionWarning && !wbn_oldQuestionBannerSet) {
         var daysOld = Math.round((new Date().getTime() - postedDateMillis) / 86400000);
         if (daysOld > cfg_oldQuestionDayThreshold) {
             var oldAnswerBanner = '<div id="wbn_oldAnswer" class="wbn_banner wbn_tooOldBanner">Question was asked ' + jQuery.timeago(postedDateMillis) + '</div>';
@@ -286,10 +286,13 @@ function updateQuestionAugmentation() {
 
     if (!wbn_questionHasAcceptedAnswerBannerSet) {
         if (hasAcceptedAnswer) {
-            var hasAnswerBanner = '<div id="wbn_questionHasAcceptedAnswer" class="wbn_banner wbn_okBanner">Question has accepted answer</div>';
-            $(hasAnswerBanner).insertBefore("#question-header");
-            $(hasAnswerBanner).insertBefore("#post-editor");
-
+            if (cfg_enableAcceptedAnswerWarning)
+            {
+                var hasAnswerBanner = '<div id="wbn_questionHasAcceptedAnswer" class="wbn_banner wbn_okBanner">Question has accepted answer</div>';
+                $(hasAnswerBanner).insertBefore("#question-header");
+                $(hasAnswerBanner).insertBefore("#post-editor");
+            }
+            
             if (cfg_highlightAcceptedAnswer) {
                 $("#answers .answer.accepted-answer").addClass("wbn_acceptedAnswerHighlight");
             }
