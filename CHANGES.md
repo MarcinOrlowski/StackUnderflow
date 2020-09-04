@@ -1,6 +1,10 @@
 StackUnderflow changelog
 ========================
 
+@dev
+----
+  - Fixed missing text color setup for accepted answer highlighting.
+
 v1.2.0 (2019-04-08)
 -------------------
   - Corrected CSS to ensure banners are correctly shown with dark themes (i.e. via Stylus)

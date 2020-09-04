@@ -483,7 +483,8 @@ GM_addStyle ( multilineStr ( function () {/*!
     }
 
     .wbn_acceptedAnswerHighlight {
-        background: #E9FCF6 !important;
+        background: #0D694C !important;
+        color: black !important;
     }
 
     .wbn_blacklistLink {
