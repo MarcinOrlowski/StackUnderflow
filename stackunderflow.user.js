@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StackUnderflow
 // @namespace    marcinorlowski.com/tampermonkey/stackunderflow
-// @version      1.2.0
+// @version      1.2.1
 // @description  Brings user blacklisting, favouries and other goodies to StackOverflow.com
 // @author       Marcin Orlowski
 // @downloadURL  https://github.com/MarcinOrlowski/StackUnderflow/raw/master/stackunderflow.user.js
@@ -271,7 +271,7 @@ function updateQuestionAugmentation() {
     var hasAcceptedAnswer = ($("#answers .answer.accepted-answer").length > 0);
 
     // plant banners
-    if (!wbn_oldQuestionBannerSet) {
+    if (cfg_enableOldQuestionWarning && !wbn_oldQuestionBannerSet) {
         var daysOld = Math.round((new Date().getTime() - postedDateMillis) / 86400000);
         if (daysOld > cfg_oldQuestionDayThreshold) {
             var oldAnswerBanner = '<div id="wbn_oldAnswer" class="wbn_banner wbn_tooOldBanner">Question was asked ' + jQuery.timeago(postedDateMillis) + '</div>';
@@ -286,10 +286,13 @@ function updateQuestionAugmentation() {
 
     if (!wbn_questionHasAcceptedAnswerBannerSet) {
         if (hasAcceptedAnswer) {
-            var hasAnswerBanner = '<div id="wbn_questionHasAcceptedAnswer" class="wbn_banner wbn_okBanner">Question has accepted answer</div>';
-            $(hasAnswerBanner).insertBefore("#question-header");
-            $(hasAnswerBanner).insertBefore("#post-editor");
-
+            if (cfg_enableAcceptedAnswerWarning)
+            {
+                var hasAnswerBanner = '<div id="wbn_questionHasAcceptedAnswer" class="wbn_banner wbn_okBanner">Question has accepted answer</div>';
+                $(hasAnswerBanner).insertBefore("#question-header");
+                $(hasAnswerBanner).insertBefore("#post-editor");
+            }
+            
             if (cfg_highlightAcceptedAnswer) {
                 $("#answers .answer.accepted-answer").addClass("wbn_acceptedAnswerHighlight");
             }
