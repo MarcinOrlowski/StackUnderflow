@@ -59,5 +59,5 @@ I created this script with my needs in mind, however I hope you find it useful t
 
 ## License ##
 
-* Written and copyrighted &copy;2016-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+* Written and copyrighted &copy;2016-2020 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
 * StackUnderflow is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
