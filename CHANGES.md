@@ -1,9 +1,11 @@
 StackUnderflow changelog
 ========================
 
-@dev
-----
+1.2.1 (2020-09-04)
+------------------
   - Fixed missing text color setup for accepted answer highlighting.
+  - Fixed `cfg_enableAcceptedAnswerWarning` and `cfg_enableOldQuestionWarning` 
+    settings being ignored (patch by @tomalakgeretkal)
 
 v1.2.0 (2019-04-08)
 -------------------
